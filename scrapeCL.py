@@ -39,7 +39,7 @@ def writeWordstoDB(id, body):
 # Write URL & Title to our DB
 def writetodatabase(title, url, body):
     # remove un-wanted text
-    body = removeselecttext('qr code link to this post', body)
+    body = body.replace('qr code link to this post', '')
 
     data = (title, url, body)
     statement = """ INSERT INTO postings
